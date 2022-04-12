@@ -1,0 +1,27 @@
+
+ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2; /* для двух колонок */
+    list-style-type: none; /* убираем точки в списке */
+    background-color: #40ceff;
+    width 90%;
+    max-width: 35rem;
+    border-radius: 20px;
+    margin: 2rem auto; /* располагаем список по центру */
+    padding: 1px;
+}
+
+ul li {
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    padding: 2rem 1rem
+}
+
+ul a:hover, ul a:active {
+    color: #ff8d31;
+}
+
+nav a:hover, ul a:active {
+    color: yellow;
+}

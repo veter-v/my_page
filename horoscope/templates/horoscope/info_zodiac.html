@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load my_filter %}
+
+{% block css_additional%}
+<link rel="stylesheet" href=" {% static 'horoscope/css/info.css' %} ">
+{% endblock %}
+
+{% block title %}
+    Гороскоп для {{sign|capfirst}}
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/navbar.html' %}
+    <h2>{{description_zodiac|split|first}}</h2>
+    {% if description_zodiac is None %}
+        <h3>Неправильный знак зодиака - {{ sign|upper }}</h3>
+    {% else %}
+        <h3>{{description_zodiac|safe}}</h3>
+    {% endif %}
+
+<!--    {% if my_list|length >= 3 %}-->
+<!--        <p>Список из 3х или более элементов - {{ my_list }} </p>-->
+<!--    {% elif my_list|length == 2 %}-->
+<!--        <p>Список из двух элементов {{ my_list }} </p>-->
+<!--    {% elif my_list|length == 1 %}-->
+<!--        <p>Список из одного элемента {{ my_list }} </p>-->
+<!--    {% else %}-->
+<!--        <p>Пустой список {{ my_list }} </p>-->
+<!--    {% endif %}-->
+
+<!--    <p>Число {{my_int|add:6}} </p>-->
+<!--    <p>Число вещественное {{my_float}} </p>-->
+<!--    <p>Кортеж {{my_tuple|join:' ! '}} </p>-->
+<!--    <p>Словарь {{my_dict}}, ключ - {{my_dict.name}} </p>-->
+<!--    <p>Экзэмпляр класса {{my_class}}, возраст - {{my_class.age}}</p>-->
+<!--    <p>default {{value|default:"По умолчанию"}}</p>-->
+{% endblock %}
